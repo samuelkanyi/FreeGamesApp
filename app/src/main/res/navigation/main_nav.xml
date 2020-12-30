@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/dashboardFragment">
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.amshel.freegamesapp.DashboardFragment"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_dashboardFragment_to_savedGames"
+            app:destination="@id/savedGames" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_singleView"
+            app:destination="@id/singleView" />
+    </fragment>
+    <fragment
+        android:id="@+id/singleView"
+        android:name="com.amshel.freegamesapp.SingleView"
+        android:label="fragment_single_view"
+        tools:layout="@layout/fragment_single_view" >
+        <action
+            android:id="@+id/action_singleView_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedGames"
+        android:name="com.amshel.freegamesapp.SavedGames"
+        android:label="fragment_saved_games"
+        tools:layout="@layout/fragment_saved_games" >
+        <action
+            android:id="@+id/action_savedGames_to_singleView"
+            app:destination="@id/singleView" />
+        <action
+            android:id="@+id/action_savedGames_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+    </fragment>
+</navigation>
